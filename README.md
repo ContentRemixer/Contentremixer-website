@@ -27,10 +27,30 @@ npm run build     # static output in dist/
 npm run preview   # preview the production build
 ```
 
-### Deploy
+### Deploy to GitHub Pages
 
-Static output (`dist/`) deploys to **Vercel** or **GitHub Pages** with no server runtime.
-For GitHub project-pages hosting, uncomment `base` in `astro.config.mjs`.
+A workflow is included at `.github/workflows/deploy-pages.yml`. It builds the Astro site and
+publishes `dist/` to Pages on every push to `main` (docs-only changes are ignored).
+
+**One-time setup (repo admin):** Settings → Pages → _Build and deployment_ → **Source: GitHub
+Actions**. The next push to `main` (or a manual **Run workflow**) publishes the site at:
+
+```
+https://contentremixer.github.io/Contentremixer-website/
+```
+
+The workflow sets `BASE_PATH=/Contentremixer-website` so all asset/link URLs are served under
+that project sub-path. All references in `src/` are already base-aware
+(`import.meta.env.BASE_URL`), so nothing else needs to change.
+
+**Custom domain** (e.g. `contentremixer.dev`) or an **org/user root page**: set `BASE_PATH` to
+`/` in the workflow, add a `public/CNAME` file containing the domain, and point the DNS record
+at GitHub Pages. (Private repos need a GitHub Pro/Team/Enterprise plan to serve Pages.)
+
+### Deploy to Vercel
+
+Import the repo in Vercel; it auto-detects Astro (build `astro build`, output `dist/`). Leave
+`BASE_PATH`/`SITE_URL` unset (base defaults to `/`).
 
 ## Docs
 
