@@ -1,0 +1,16 @@
+# build output
+dist/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# deps
+node_modules/
+
+# astro
+.astro/
+
+# env + editor
+.env
+.env.production
+.DS_Store
+.vscode/

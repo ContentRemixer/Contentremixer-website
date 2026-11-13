@@ -1,0 +1,64 @@
+---
+import { LINKS } from '../lib/site';
+---
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="band card reveal">
+      <div class="band-glow" aria-hidden="true"></div>
+      <h2>Create once.<br /><span class="gradient-text">Publish everywhere.</span></h2>
+      <p>
+        Point ContentRemixer at your Crate and ship your first remix this week. The Getting
+        Started guide walks you from an empty repo to a merged pull request.
+      </p>
+      <div class="band-cta">
+        <a class="btn btn-primary" href={LINKS.gettingStarted} rel="noopener">
+          Read the Getting Started guide
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn-ghost" href={LINKS.docs} rel="noopener">Browse the docs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-band {
+    padding-block: clamp(40px, 7vw, 90px);
+  }
+  .band {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: clamp(40px, 6vw, 72px) var(--gutter);
+    border-color: var(--hairline-strong);
+  }
+  .band-glow {
+    position: absolute;
+    inset: -40% 20% auto 20%;
+    height: 80%;
+    background: var(--fade);
+    filter: blur(90px);
+    opacity: 0.3;
+  }
+  .band h2 {
+    position: relative;
+    font-size: clamp(2rem, 4.4vw, 3.3rem);
+    font-weight: 700;
+  }
+  .band p {
+    position: relative;
+    margin: 18px auto 0;
+    max-width: 52ch;
+    color: var(--text-dim);
+    font-size: 1.08rem;
+  }
+  .band-cta {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 32px;
+  }
+</style>
