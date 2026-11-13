@@ -1,0 +1,76 @@
+---
+import { LINKS } from '../lib/site';
+const year = 2026;
+---
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img src="/brand/svg/logo_mono_white.svg" alt="ContentRemixer" height="28" width="196" />
+      <p>Create once. Publish everywhere.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href={LINKS.gettingStarted} rel="noopener">Getting started</a>
+      <a href={LINKS.docs} rel="noopener">Docs</a>
+      <a href={LINKS.architecture} rel="noopener">Architecture</a>
+      <a href={LINKS.repo} rel="noopener">GitHub</a>
+    </nav>
+  </div>
+  <div class="wrap foot-base">
+    <span>© {year} ContentRemixer · IsItObservable Labs</span>
+    <span class="fade-rule" aria-hidden="true"></span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--hairline);
+    padding-block: 48px 36px;
+    background: color-mix(in srgb, var(--bg-2) 60%, transparent);
+  }
+  .foot-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .foot-brand img {
+    height: 28px;
+    width: auto;
+    margin-bottom: 12px;
+  }
+  .foot-brand p {
+    color: var(--text-mute);
+    font-size: 0.9rem;
+  }
+  .foot-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: var(--font-head);
+    font-size: 0.92rem;
+  }
+  .foot-links a {
+    color: var(--text-dim);
+    transition: color 0.16s ease;
+  }
+  .foot-links a:hover {
+    color: var(--white);
+  }
+  .foot-base {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 34px;
+    font-size: 0.82rem;
+    color: var(--text-mute);
+  }
+  .fade-rule {
+    flex: 1;
+    height: 2px;
+    border-radius: var(--r-pill);
+    background: var(--fade);
+    opacity: 0.55;
+  }
+</style>

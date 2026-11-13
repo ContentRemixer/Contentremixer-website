@@ -1,0 +1,596 @@
+---
+// Three product mockups rendered as pure CSS/SVG (no screenshots, no runtime deps).
+// Tabs use the CSS :checked radio technique so they work with JavaScript disabled.
+---
+
+<section id="mockups" class="section mockups">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="eyebrow">See it running</p>
+      <h2>Step inside the Booth.</h2>
+      <p class="sub">
+        Review drafts, trace every remix back to its source, and watch a single issue become a
+        set of publish-ready pull requests.
+      </p>
+    </header>
+
+    <div class="showcase reveal">
+      <div class="tabs" role="tablist">
+        <input type="radio" name="mk" id="mk1" checked />
+        <label for="mk1">The Booth</label>
+        <input type="radio" name="mk" id="mk2" />
+        <label for="mk2">Issue → PR</label>
+        <input type="radio" name="mk" id="mk3" />
+        <label for="mk3">Remix outputs</label>
+
+        <!-- ================= Screen 1: The Booth ================= -->
+        <div class="screen s1">
+          <div class="browser">
+            <div class="chrome">
+              <span class="tl"></span><span class="tl"></span><span class="tl"></span>
+              <span class="url">the-booth.contentremixer.dev</span>
+            </div>
+            <div class="booth">
+              <aside class="rail">
+                <span class="rail-brand">◆ The Booth</span>
+                <nav>
+                  <span class="nav-item active">Reviews</span>
+                  <span class="nav-item">Personas</span>
+                  <span class="nav-item">The Crate</span>
+                  <span class="nav-item">Publishing</span>
+                  <span class="nav-item">Settings</span>
+                </nav>
+                <div class="voice">
+                  <span class="voice-l">Persona · Ava (DevRel)</span>
+                  <span class="meter"><i style="width:82%"></i></span>
+                  <span class="voice-s">voice match 82%</span>
+                </div>
+              </aside>
+              <div class="board">
+                <div class="col">
+                  <span class="col-h">In review <b>3</b></span>
+                  <div class="rcard">
+                    <span class="rtitle">Observability 101 → Blog</span>
+                    <span class="pill p-blog">recycle:blog</span>
+                    <span class="rmeta">PR #129 · 2 checks ✓</span>
+                  </div>
+                  <div class="rcard">
+                    <span class="rtitle">Observability 101 → LinkedIn</span>
+                    <span class="pill p-li">recycle:linkedin</span>
+                    <span class="rmeta">PR #130 · 2 checks ✓</span>
+                  </div>
+                  <div class="rcard">
+                    <span class="rtitle">Observability 101 → Short</span>
+                    <span class="pill p-sh">recycle:short</span>
+                    <span class="rmeta">PR #131 · running…</span>
+                  </div>
+                </div>
+                <div class="col">
+                  <span class="col-h">Approved <b>1</b></span>
+                  <div class="rcard done">
+                    <span class="rtitle">GraphQL deep-dive → Blog</span>
+                    <span class="rmeta ok">merged · dropped to Medium</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cap">The Booth — a role-aware console for reviewing, approving, and publishing every remix.</p>
+        </div>
+
+        <!-- ================= Screen 2: Issue → PR ================= -->
+        <div class="screen s2">
+          <div class="flow">
+            <div class="browser mini">
+              <div class="chrome"><span class="tl"></span><span class="tl"></span><span class="tl"></span><span class="url">issues/128</span></div>
+              <div class="pane">
+                <span class="ghhead"><b>Recycle: Observability 101 talk</b> <em>#128 · open</em></span>
+                <p class="ghbody">Turn the conference talk into our standard DevRel set. Source is in the Crate.</p>
+                <div class="labels">
+                  <span class="pill p-blog">recycle:blog</span>
+                  <span class="pill p-li">recycle:linkedin</span>
+                  <span class="pill p-sh">recycle:short</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arrow-bridge" aria-hidden="true">
+              <span class="bridge-knob"></span>
+              <svg viewBox="0 0 64 24" width="64" height="24"><path d="M2 12h54" stroke="url(#fg)" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M50 5l8 7-8 7" stroke="url(#fg)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="fg" x1="0" x2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset=".5" stop-color="#ec4899"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs></svg>
+              <span class="bridge-label">agent mixes</span>
+            </div>
+
+            <div class="browser mini">
+              <div class="chrome"><span class="tl"></span><span class="tl"></span><span class="tl"></span><span class="url">pull/129</span></div>
+              <div class="pane">
+                <span class="ghhead"><b>Add 3 remixes + sample clearance</b> <em>#129 · ready</em></span>
+                <ul class="diff">
+                  <li><span class="add">+ posts/observability-101.md</span></li>
+                  <li><span class="add">+ social/linkedin/obs-101.md</span></li>
+                  <li><span class="add">+ shorts/obs-101.script.md</span></li>
+                  <li><span class="add">+ SOURCES.md</span> <small>sample clearance</small></li>
+                </ul>
+                <span class="checks">✓ brand-voice · ✓ clearance · ✓ build</span>
+              </div>
+            </div>
+          </div>
+          <p class="cap">One issue, picked by label, becomes a reviewable pull request — with source attribution attached.</p>
+        </div>
+
+        <!-- ================= Screen 3: Remix outputs ================= -->
+        <div class="screen s3">
+          <div class="outs">
+            <div class="out-card">
+              <span class="out-tag">Blog post</span>
+              <span class="ln w90 big"></span>
+              <span class="ln w60"></span>
+              <span class="ln w100"></span>
+              <span class="ln w95"></span>
+              <span class="ln w80"></span>
+              <span class="ln w70"></span>
+            </div>
+            <div class="out-card">
+              <span class="out-tag">LinkedIn</span>
+              <div class="li-top"><span class="av"></span><span class="li-name"><b></b><i></i></span></div>
+              <span class="ln w100"></span>
+              <span class="ln w90"></span>
+              <span class="ln w75"></span>
+              <span class="li-react">♡ 214 · 38 reposts</span>
+            </div>
+            <div class="out-card short">
+              <span class="out-tag">YouTube Short</span>
+              <div class="phone">
+                <span class="play"></span>
+                <span class="cc">obs in 60s ▸</span>
+              </div>
+            </div>
+          </div>
+          <p class="cap">Every format comes out in your voice — blog, social, and short-form script — ready to drop.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .head {
+    max-width: 56ch;
+    margin-bottom: 40px;
+  }
+  .head h2 {
+    font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  }
+  .sub {
+    margin-top: 16px;
+    color: var(--text-dim);
+    font-size: 1.08rem;
+  }
+
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    gap: 8px;
+  }
+  .tabs input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .tabs label {
+    font-family: var(--font-head);
+    font-weight: 500;
+    font-size: 0.92rem;
+    padding: 9px 18px;
+    border-radius: var(--r-pill);
+    border: 1px solid var(--hairline-strong);
+    color: var(--text-dim);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.16s ease;
+  }
+  .tabs label:hover {
+    color: var(--white);
+  }
+  #mk1:checked ~ label[for='mk1'],
+  #mk2:checked ~ label[for='mk2'],
+  #mk3:checked ~ label[for='mk3'] {
+    color: #fff;
+    background: var(--fade);
+    border-color: transparent;
+  }
+  /* keyboard focus ring */
+  .tabs input:focus-visible + label {
+    outline: 2px solid var(--lavender);
+    outline-offset: 2px;
+  }
+
+  .screen {
+    display: none;
+    margin-top: 26px;
+    grid-column: 1 / -1;
+  }
+  #mk1:checked ~ .s1,
+  #mk2:checked ~ .s2,
+  #mk3:checked ~ .s3 {
+    display: block;
+    animation: fadein 0.4s ease;
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* ---- browser frame ---- */
+  .browser {
+    background: var(--tile);
+    border: 1px solid var(--hairline-strong);
+    border-radius: var(--r-md);
+    overflow: hidden;
+    box-shadow: 0 30px 70px -36px rgba(0, 0, 0, 0.85);
+  }
+  .chrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 11px 14px;
+    background: color-mix(in srgb, var(--bg-2) 70%, black);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .tl {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--track-base);
+  }
+  .url {
+    margin-left: 12px;
+    font-size: 0.74rem;
+    color: var(--text-mute);
+    font-family: var(--font-head);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---- Screen 1: Booth ---- */
+  .booth {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    min-height: 340px;
+  }
+  .rail {
+    border-right: 1px solid var(--hairline);
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: color-mix(in srgb, var(--bg-2) 40%, transparent);
+  }
+  .rail-brand {
+    font-family: var(--font-head);
+    font-weight: 600;
+    color: var(--white);
+    font-size: 0.95rem;
+  }
+  .rail nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .nav-item {
+    font-size: 0.86rem;
+    padding: 8px 10px;
+    border-radius: var(--r-xs);
+    color: var(--text-mute);
+  }
+  .nav-item.active {
+    color: var(--white);
+    background: color-mix(in srgb, var(--violet) 22%, transparent);
+  }
+  .voice {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .voice-l {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+  }
+  .voice-s {
+    font-size: 0.68rem;
+    color: var(--text-mute);
+  }
+  .meter {
+    height: 7px;
+    border-radius: var(--r-pill);
+    background: var(--track-base);
+    overflow: hidden;
+  }
+  .meter i {
+    display: block;
+    height: 100%;
+    background: var(--fade);
+  }
+  .board {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 14px;
+    padding: 18px;
+  }
+  .col-h {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin-bottom: 12px;
+  }
+  .col-h b {
+    color: var(--lavender);
+  }
+  .rcard {
+    background: color-mix(in srgb, var(--white) 4%, transparent);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    padding: 13px 14px;
+    margin-bottom: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .rcard.done {
+    border-color: color-mix(in srgb, var(--orange) 36%, transparent);
+  }
+  .rtitle {
+    font-size: 0.88rem;
+    color: var(--white);
+    font-weight: 500;
+    font-family: var(--font-head);
+  }
+  .rmeta {
+    font-size: 0.72rem;
+    color: var(--text-mute);
+  }
+  .rmeta.ok {
+    color: var(--glyph-orange);
+  }
+
+  /* label pills (shared by screens 1 + 2) */
+  .pill {
+    align-self: flex-start;
+    font-size: 0.7rem;
+    font-family: var(--font-head);
+    padding: 3px 9px;
+    border-radius: var(--r-pill);
+    border: 1px solid transparent;
+  }
+  .p-blog {
+    color: #d9c9ff;
+    background: color-mix(in srgb, var(--violet) 26%, transparent);
+    border-color: color-mix(in srgb, var(--violet) 50%, transparent);
+  }
+  .p-li {
+    color: #ffd0e6;
+    background: color-mix(in srgb, var(--magenta) 24%, transparent);
+    border-color: color-mix(in srgb, var(--magenta) 48%, transparent);
+  }
+  .p-sh {
+    color: #ffe0c4;
+    background: color-mix(in srgb, var(--orange) 24%, transparent);
+    border-color: color-mix(in srgb, var(--orange) 48%, transparent);
+  }
+
+  /* ---- Screen 2: flow ---- */
+  .flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+  }
+  .mini .pane {
+    padding: 16px;
+    min-height: 200px;
+  }
+  .ghhead {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .ghhead em {
+    color: var(--text-mute);
+    font-style: normal;
+    font-size: 0.78rem;
+  }
+  .ghbody {
+    color: var(--text-dim);
+    font-size: 0.84rem;
+    margin-bottom: 14px;
+  }
+  .labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .diff {
+    list-style: none;
+    margin: 0 0 14px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+    font-size: 0.78rem;
+  }
+  .diff .add {
+    color: #8ff0bd;
+  }
+  .diff small {
+    color: var(--text-mute);
+    font-family: var(--font-body);
+  }
+  .checks {
+    font-size: 0.76rem;
+    color: var(--glyph-orange);
+    font-family: var(--font-head);
+  }
+  .arrow-bridge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .bridge-label {
+    font-family: var(--font-head);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lavender);
+  }
+  .bridge-knob {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff, #e8e2ff);
+    box-shadow: 0 0 14px -2px var(--magenta);
+  }
+
+  /* ---- Screen 3: outputs ---- */
+  .outs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.8fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .out-card {
+    background: var(--tile);
+    border: 1px solid var(--hairline-strong);
+    border-radius: var(--r-md);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-height: 220px;
+    box-shadow: 0 24px 60px -40px rgba(0, 0, 0, 0.8);
+  }
+  .out-tag {
+    align-self: flex-start;
+    font-family: var(--font-head);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    padding: 4px 11px;
+    border-radius: var(--r-pill);
+    color: #fff;
+    background: var(--fade);
+    margin-bottom: 6px;
+  }
+  .ln {
+    height: 9px;
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--lavender) 22%, transparent);
+  }
+  .ln.big {
+    height: 15px;
+    background: color-mix(in srgb, var(--lavender) 40%, transparent);
+  }
+  .w100 { width: 100%; }
+  .w95 { width: 95%; }
+  .w90 { width: 90%; }
+  .w80 { width: 80%; }
+  .w75 { width: 75%; }
+  .w70 { width: 70%; }
+  .w60 { width: 60%; }
+  .li-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .av {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--fade);
+    flex: none;
+  }
+  .li-name {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+  }
+  .li-name b {
+    height: 9px;
+    width: 50%;
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--lavender) 45%, transparent);
+  }
+  .li-name i {
+    height: 7px;
+    width: 32%;
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--lavender) 22%, transparent);
+  }
+  .li-react {
+    margin-top: auto;
+    font-size: 0.74rem;
+    color: var(--text-mute);
+  }
+  .short .phone {
+    position: relative;
+    flex: 1;
+    border-radius: var(--r-sm);
+    background: linear-gradient(160deg, color-mix(in srgb, var(--violet) 40%, var(--bg-2)), var(--bg-2));
+    border: 1px solid var(--hairline-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+  }
+  .play {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 13px 0 13px 22px;
+    border-color: transparent transparent transparent #fff;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  }
+  .cc {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    font-family: var(--font-head);
+    font-size: 0.72rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 3px 8px;
+    border-radius: var(--r-xs);
+  }
+
+  .cap {
+    margin-top: 18px;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    max-width: 62ch;
+  }
+
+  @media (max-width: 860px) {
+    .booth {
+      grid-template-columns: 1fr;
+    }
+    .rail {
+      border-right: none;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .flow {
+      grid-template-columns: 1fr;
+    }
+    .arrow-bridge svg {
+      transform: rotate(90deg);
+    }
+    .outs {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

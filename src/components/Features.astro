@@ -1,0 +1,127 @@
+---
+// Simple stroke icons kept inline so there's no runtime icon dependency.
+const features = [
+  {
+    title: 'The Crate',
+    body: 'A Git-native reference library — videos, blogs, livestreams, podcasts — structured, versioned, and fully traceable back to the source.',
+    icon: 'crate',
+  },
+  {
+    title: 'Your voice, learned',
+    body: 'Per-author voice cards plus local RAG (pgvector + open embeddings) condition every draft, so the mix reads like you wrote it — not a model.',
+    icon: 'voice',
+  },
+  {
+    title: 'Mastering & clearance',
+    body: 'A dedicated checker step scrubs for brand voice and house rules, and stamps sample clearance — source attribution — into every pull request.',
+    icon: 'shield',
+  },
+  {
+    title: 'The Booth',
+    body: 'A role-aware admin console to steer personas, review drafts, approve, and watch the pipeline — dual approval that mirrors the GitHub review.',
+    icon: 'console',
+  },
+  {
+    title: 'Model-agnostic gateway',
+    body: 'Route analysis and writing to different models through LiteLLM / agentgateway. Swap providers per role without touching the pipeline.',
+    icon: 'gateway',
+  },
+  {
+    title: 'The Drop',
+    body: 'The Publishing Hub suggests channel and timing across Medium, Craft CMS, LinkedIn, and YouTube Shorts — and packages the Weekly Remix.',
+    icon: 'drop',
+  },
+];
+
+const icons: Record<string, string> = {
+  crate:
+    '<path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/>',
+  voice:
+    '<path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3z"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/>',
+  shield: '<path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/>',
+  console:
+    '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 14h4"/><path d="M15 14h2"/>',
+  gateway: '<circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 11l8-4M8 13l8 4"/>',
+  drop: '<path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/>',
+};
+---
+
+<section id="features" class="section features">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="eyebrow">What's under the hood</p>
+      <h2>A studio, not a prompt box.</h2>
+      <p class="sub">
+        Every part of the pipeline is built for teams who ship content on a schedule and need it
+        to sound like them, every time.
+      </p>
+    </header>
+
+    <div class="grid">
+      {
+        features.map((f, i) => (
+          <article class="feat card reveal" style={`transition-delay:${(i % 3) * 80}ms`}>
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={icons[f.icon]} />
+            </span>
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .head {
+    max-width: 56ch;
+    margin-bottom: 44px;
+  }
+  .head h2 {
+    font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  }
+  .sub {
+    margin-top: 16px;
+    color: var(--text-dim);
+    font-size: 1.08rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .feat {
+    padding: 26px 24px 28px;
+  }
+  .ico {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: var(--r-sm);
+    color: var(--lavender);
+    background: color-mix(in srgb, var(--violet) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--lavender) 30%, transparent);
+    margin-bottom: 18px;
+  }
+  .feat h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .feat p {
+    color: var(--text-dim);
+    font-size: 0.97rem;
+  }
+  @media (max-width: 920px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 580px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
