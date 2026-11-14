@@ -1,12 +1,13 @@
 ---
 import { LINKS } from '../lib/site';
 const year = 2026;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <footer class="footer">
   <div class="wrap foot-grid">
     <div class="foot-brand">
-      <img src="/brand/svg/logo_mono_white.svg" alt="ContentRemixer" height="28" width="196" />
+      <img src={`${base}brand/svg/logo_mono_white.svg`} alt="ContentRemixer" height="28" width="196" />
       <p>Create once. Publish everywhere.</p>
     </div>
     <nav class="foot-links" aria-label="Footer">
